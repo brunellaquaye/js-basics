@@ -1,3 +1,60 @@
+function menu() {
+  let userChoice = parseInt(
+    prompt(
+      "Choose a number to use: \n" +
+        "1. Age Predictor\n" +
+        "2. Profit Calculator\n" +
+        "3. Grader\n" +
+        "4. Slice Share Calculator\n" +
+        "5. Page Tracker\n" +
+        "6. Temperature Converter\n" +
+        "7. Discount Checker\n" +
+        "8. Guess Game\n" +
+        "9. Multiplication Table\n" +
+        "10. Allowance Tracker\n" +
+        "11. Speed Fine Checker\n" +
+        "12. Paint Checker\n" +
+        "13. Tips Calculator\n" +
+        "14. Password Checker\n" +
+        "15. Heights Converter"
+    )
+  );
+  if (userChoice == 1) {
+    agePredictor();
+  } else if (userChoice == 2) {
+    profit();
+  } else if (userChoice == 3) {
+    grader();
+  } else if (userChoice == 4) {
+    sliceShare();
+  } else if (userChoice == 5) {
+    pageTracker();
+  } else if (userChoice == 6) {
+    temperatureConverter();
+  } else if (userChoice == 7) {
+    discountChecker();
+  } else if (userChoice == 8) {
+    guessGame();
+  } else if (userChoice == 9) {
+    multiTable();
+  } else if (userChoice == 10) {
+    allowanceTracker();
+  } else if (userChoice == 11) {
+    speedFineChecker();
+  } else if (userChoice == 12) {
+    paintChecker();
+  } else if (userChoice == 13) {
+    tipsCalculator();
+  } else if (userChoice == 14) {
+    passwordChecker();
+  } else if (userChoice == 15) {
+    heightsConverter();
+  } else {
+    menu();
+  }
+}
+menu();
+
 // lemonade stand profit
 const costPrice = 0.5;
 const sellingPrice = 1.5;
@@ -6,7 +63,7 @@ function profit() {
   let numOfCups = parseInt(prompt("How many cups did you sell?"));
   alert("You had " + (sellingPrice - costPrice) * numOfCups + " in profit");
 }
-profit();
+// profit();
 
 // age predictor
 function agePredictor() {
@@ -15,32 +72,33 @@ function agePredictor() {
     prompt("Which future year do you want to check?"),
     10
   );
-  alert("Your age in 2004will be " + (futureYear - birthYear));
+  alert("Your age " + futureYear + "will be " + (futureYear - birthYear));
 }
-agePredictor();
+// agePredictor();
 
 // Odd or even number
 function numberTypeChecker() {
   let input = parseInt(prompt("Enter a number : "), 10);
-
+  // use a conditional to check if numbers are odd or even
   if (input % 2 == 0) {
     alert("even");
   } else {
     alert("odd");
   }
 }
-numbertypeChecker();
+// numberTypeChecker();
 
 // Pizza share
 const box = 8;
 function sliceShare() {
   let people = parseInt(prompt("How many people are at the paerty?"), 10);
   let order = parseInt(prompt("How many boxes ordered?"), 10);
-
+  // Make use of Math.floor to return the rounded figure of the result
   alert("Each person gets" + Math.floor((box * order) / people));
   alert(((box * order) % people) + " pieces of pizza will be left behind");
 }
-  sliceShare()
+// make a call to the function
+// sliceShare()
 
 // Book tracker
 function pageTracker() {
@@ -54,7 +112,7 @@ function pageTracker() {
   );
 }
 
-pageTracker()
+// pageTracker()
 
 // grading system
 function grader() {
@@ -72,7 +130,7 @@ function grader() {
     alert("F");
   }
 }
-grader()
+// grader()
 
 // temperature convertor
 function temperatureConverter() {
@@ -83,19 +141,19 @@ function temperatureConverter() {
 
   alert("Your temperature in Fahrenheit is " + (temperature * (9 / 5) + 32));
 }
-temperatureConverter()
+// temperatureConverter()
 
-// Bus ticket discount
+// Bus ticket discount - Use conditionals to check the if someone may need a discount.
 function discountChecker() {
   let age = parseInt(prompt("How old are you?"));
   if (age < 12 || age > 65) {
     alert("discounted ticket");
-  }else{
-    alert("no discount")
+  } else {
+    alert("no discount");
   }
 }
 
-discountChecker();
+// discountChecker();
 
 // Guess game
 function guessGame() {
@@ -110,7 +168,7 @@ function guessGame() {
     alert("Too low");
   }
 }
-guessGame();
+// guessGame();
 
 // multiplication table
 function multiTable() {
@@ -124,7 +182,7 @@ function multiTable() {
   alert(result);
 }
 
-multiTable();
+// multiTable();
 
 // allowance
 function allowanceTracker() {
@@ -132,12 +190,12 @@ function allowanceTracker() {
   let weekSavings = parseInt(prompt("How many weeks do you want to save?"));
   alert("Your total amount is " + perWeek * weekSavings);
 }
-allowanceTracker();
+// allowanceTracker();
 
 //
 function speedFineChecker() {
-  speedLimit = parseInt(prompt("What is your speed limit?"), 10);
-  yourSpeed = parseInt(prompt("What was your speed?"), 10);
+  let speedLimit = parseInt(prompt("What is your speed limit?"), 10);
+  let yourSpeed = parseInt(prompt("What was your speed?"), 10);
   if (yourSpeed <= speedLimit) {
     alert("No fine");
   } else {
@@ -146,50 +204,48 @@ function speedFineChecker() {
   }
 }
 
-speedFineChecker();
+// speedFineChecker();
 
 // paint question
 function paintChecker() {
-  height = parseInt(prompt("What is the height of the wall?"), 10);
-  width = parseInt(prompt("What is the width of the wall?"), 10);
+  let height = parseInt(prompt("What is the height of the wall?"), 10);
+  let width = parseInt(prompt("What is the width of the wall?"), 10);
   alert("You will need " + Math.round((height * width) / 50));
 }
 
-paintChecker();
+// paintChecker();
 
-function tipCalculs() {
-  total = parseInt(prompt("What is the total bill? "), 10);
-  percentage = parseInt(prompt("What is the  percentage? "), 10);
-  people = parseInt(prompt("How many people are there? "), 10);
+function tipsCalculator() {
+  let total = parseInt(prompt("What is the total bill? "), 10);
+  let percentage = parseInt(prompt("What is the  percentage? "), 10);
+  let people = parseInt(prompt("How many people are there? "), 10);
   alert("Each person pays" + (total * (percentage / 100)) / people);
 }
 
-tipCalculs();
+// tipCalculs();
 
 function simpleInterest() {
-  principal = parseInt(prompt("What is the principal amount?"), 10);
-  interestRate = parseInt(prompt("What is the interest rate?"), 10);
-  years = parseInt(prompt("How many years?"), 10);
+  let principal = parseInt(prompt("What is the principal amount?"), 10);
+  let interestRate = parseInt(prompt("What is the interest rate?"), 10);
+  let years = parseInt(prompt("How many years?"), 10);
   alert("Your total interest is " + (principal * interestRate * years) / 100);
 }
-simpleInterest();
+// simpleInterest();
 
 function desksPlanner() {
-  students = parseInt(prompt("How many students are in the class? "), 10);
-  row = parseInt(prompt("How many desks fit one row"), 19);
+  let students = parseInt(prompt("How many students are in the class? "), 10);
+  let row = parseInt(prompt("How many desks fit one row"), 19);
   alert("We need " + students / row + "rows full");
 }
-desksPlanner();
+// desksPlanner();
 
 function heightsConverter() {
-  feet = parseInt(prompt("What height in feet "), 10);
-  inches = parseInt(prompt("What are you inches?"), 10);
-  alert(
-    "Your height in centimeter is " + (this.feet * 12 + this.inches) * 2.54
-  );
+  let feet = parseInt(prompt("What height in feet "), 10);
+  let inches = parseInt(prompt("What are you inches?"), 10);
+  alert("Your height in centimeter is " + (feet * 12 + inches) * 2.54);
 }
 
-heightsConverter();
+//heightsConverter();
 
 const correct = "lemon123";
 function passwordChecker() {
@@ -200,4 +256,4 @@ function passwordChecker() {
     alert("Too Access denied");
   }
 }
-passwordChecker();
+// passwordChecker();
